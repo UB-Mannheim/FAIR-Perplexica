@@ -8,6 +8,7 @@ interface Config {
   GENERAL: {
     PORT: number;
     SIMILARITY_MEASURE: string;
+    GLOBAL_CONTEXT: string;
   };
   API_KEYS: {
     OPENAI: string;
@@ -33,6 +34,8 @@ export const getPort = () => loadConfig().GENERAL.PORT;
 
 export const getSimilarityMeasure = () =>
   loadConfig().GENERAL.SIMILARITY_MEASURE;
+
+export const getGlobalContext = () => loadConfig().GENERAL.GLOBAL_CONTEXT;
 
 export const getOpenaiApiKey = () => loadConfig().API_KEYS.OPENAI;
 

@@ -24,6 +24,9 @@ import { getDocumentsFromLinks } from '../lib/linkDocument';
 import LineOutputParser from '../lib/outputParsers/lineOutputParser';
 import { IterableReadableStream } from '@langchain/core/utils/stream';
 import { ChatOpenAI } from '@langchain/openai';
+import { getGlobalContext } from '../config';
+
+const GlobalContext = getGlobalContext();
 
 const basicSearchRetrieverPrompt = `
 You are an AI question rephraser. You will be given a conversation and a follow-up question,  you will have to rephrase the follow up question so it is a standalone question and can be used by another LLM to search the web for information to answer it.
@@ -248,7 +251,7 @@ const createBasicWebSearchRetrieverChain = (llm: BaseChatModel) => {
 
         return { query: question, docs: docs };
       } else {
-        const res = await searchSearxng(question, {
+        const res = await searchSearxng(`${question} ${GlobalContext}`, {
           language: 'en',
         });
 
