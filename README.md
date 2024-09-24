@@ -1,35 +1,21 @@
-# 🚀 Perplexica - An AI-powered search engine 🔎 <!-- omit in toc -->
+# 🚀 FAIR-Perplexica - An AI-powered search engine for Research Data Management based on Perplexica 🔎 <!-- omit in toc -->
 
 ![preview](.assets/perplexica-screenshot.png)
 
 ## Table of Contents <!-- omit in toc -->
 
 - [Overview](#overview)
-- [Preview](#preview)
 - [Features](#features)
 - [Installation](#installation)
   - [Getting Started with Docker (Recommended)](#getting-started-with-docker-recommended)
   - [Non-Docker Installation](#non-docker-installation)
   - [Ollama Connection Errors](#ollama-connection-errors)
 - [Using as a Search Engine](#using-as-a-search-engine)
-- [One-Click Deployment](#one-click-deployment)
-- [Upcoming Features](#upcoming-features)
-- [Support Us](#support-us)
-  - [Donations](#donations)
-- [Contribution](#contribution)
-- [Help and Support](#help-and-support)
 
 ## Overview
 
-Perplexica is an open-source AI-powered searching tool or an AI-powered search engine that goes deep into the internet to find answers. Inspired by Perplexity AI, it's an open-source option that not just searches the web but understands your questions. It uses advanced machine learning algorithms like similarity searching and embeddings to refine results and provides clear answers with sources cited.
-
-Using SearxNG to stay current and fully open source, Perplexica ensures you always get the most up-to-date information without compromising your privacy.
-
-Want to know more about its architecture and how it works? You can read it [here](https://github.com/ItzCrazyKns/Perplexica/tree/master/docs/architecture/README.md).
-
-## Preview
-
-![video-preview](.assets/perplexica-preview.gif)
+FAIR-Perplexica is an open-source AI-powered searching tool on topics related to Research Data Management. 
+It is based on [Perplexica](https://github.com/ItzCrazyKns/Perplexica) and metasearch-engine [SearxNG](https://github.com/searxng/searxng).
 
 ## Features
 
@@ -50,15 +36,15 @@ It has many more features like image and video search. Some of the planned featu
 
 ## Installation
 
-There are mainly 2 ways of installing Perplexica - With Docker, Without Docker. Using Docker is highly recommended.
+There are mainly 2 ways of installing FAIR-Perplexica - With Docker, Without Docker. Using Docker is highly recommended.
 
 ### Getting Started with Docker (Recommended)
 
 1. Ensure Docker is installed and running on your system.
-2. Clone the Perplexica repository:
+2. Clone the FAIR-Perplexica repository:
 
    ```bash
-   git clone https://github.com/ItzCrazyKns/Perplexica.git
+   git clone https://github.com/UB-Mannheim/FAIR-Perplexica.git
    ```
 
 3. After cloning, navigate to the directory containing the project files.
@@ -95,7 +81,7 @@ There are mainly 2 ways of installing Perplexica - With Docker, Without Docker. 
 
 **Note**: Using Docker is recommended as it simplifies the setup process, especially for managing environment variables and dependencies.
 
-See the [installation documentation](https://github.com/ItzCrazyKns/Perplexica/tree/master/docs/installation) for more information like exposing it your network, etc.
+See the [installation documentation](https://github.com/UB-Mannheim/FAIR-Perplexica/tree/master/docs/installation) for more information like exposing it your network, etc.
 
 ### Ollama Connection Errors
 
@@ -118,44 +104,9 @@ If you're encountering an Ollama connection error, it is likely due to the backe
 
 ## Using as a Search Engine
 
-If you wish to use Perplexica as an alternative to traditional search engines like Google or Bing, or if you want to add a shortcut for quick access from your browser's search bar, follow these steps:
+If you wish to use FAIR-Perplexica as an alternative to traditional search engines like Google or Bing, or if you want to add a shortcut for quick access from your browser's search bar, follow these steps:
 
 1. Open your browser's settings.
 2. Navigate to the 'Search Engines' section.
 3. Add a new site search with the following URL: `http://localhost:3000/?q=%s`. Replace `localhost` with your IP address or domain name, and `3000` with the port number if Perplexica is not hosted locally.
-4. Click the add button. Now, you can use Perplexica directly from your browser's search bar.
-
-## One-Click Deployment
-
-[![Deploy to RepoCloud](https://d16t0pc4846x52.cloudfront.net/deploylobe.svg)](https://repocloud.io/details/?app_id=267)
-
-## Upcoming Features
-
-- [x] Add settings page
-- [x] Adding support for local LLMs
-- [x] History Saving features
-- [x] Introducing various Focus Modes
-- [ ] Finalizing Copilot Mode
-- [ ] Adding Discover
-
-## Support Us
-
-If you find Perplexica useful, consider giving us a star on GitHub. This helps more people discover Perplexica and supports the development of new features. Your support is greatly appreciated.
-
-### Donations
-
-We also accept donations to help sustain our project. If you would like to contribute, you can use the following options to donate. Thank you for your support!
-
-| Ethereum                                              |
-| ----------------------------------------------------- |
-| Address: `0xB025a84b2F269570Eb8D4b05DEdaA41D8525B6DD` |
-
-## Contribution
-
-Perplexica is built on the idea that AI and large language models should be easy for everyone to use. If you find bugs or have ideas, please share them in via GitHub Issues. For more information on contributing to Perplexica you can read the [CONTRIBUTING.md](CONTRIBUTING.md) file to learn more about Perplexica and how you can contribute to it.
-
-## Help and Support
-
-If you have any questions or feedback, please feel free to reach out to us. You can create an issue on GitHub or join our Discord server. There, you can connect with other users, share your experiences and reviews, and receive more personalized help. [Click here](https://discord.gg/EFwsmQDgAu) to join the Discord server. To discuss matters outside of regular support, feel free to contact me on Discord at `itzcrazykns`.
-
-Thank you for exploring Perplexica, the AI-powered search engine designed to enhance your search experience. We are constantly working to improve Perplexica and expand its capabilities. We value your feedback and contributions which help us make Perplexica even better. Don't forget to check back for updates and new features!
+4. Click the add button. Now, you can use FAIR-Perplexica directly from your browser's search bar.
