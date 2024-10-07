@@ -64,6 +64,7 @@ interface SettingsType {
   groqApiKey: string;
   anthropicApiKey: string;
   ollamaApiUrl: string;
+  temperature: number;
 }
 
 const SettingsDialog = ({
@@ -84,6 +85,7 @@ const SettingsDialog = ({
   const [selectedChatModel, setSelectedChatModel] = useState<string | null>(
     null,
   );
+  const [temperature, setTemperature] = useState<number>(0.7); // Default temperature
   const [selectedEmbeddingModelProvider, setSelectedEmbeddingModelProvider] =
     useState<string | null>(null);
   const [selectedEmbeddingModel, setSelectedEmbeddingModel] = useState<
@@ -106,6 +108,10 @@ const SettingsDialog = ({
 
         const data = (await res.json()) as SettingsType;
         setConfig(data);
+        
+        // Retrieve temperature from config or localStorage
+        const storedTemperature = localStorage.getItem('temperature');
+        setTemperature(storedTemperature ? parseFloat(storedTemperature) : (data.temperature || 0.7));
 
         const chatModelProvidersKeys = Object.keys(
           data.chatModelProviders || {},
@@ -177,6 +183,7 @@ const SettingsDialog = ({
       localStorage.setItem('embeddingModel', selectedEmbeddingModel!);
       localStorage.setItem('openAIApiKey', customOpenAIApiKey!);
       localStorage.setItem('openAIBaseURL', customOpenAIBaseURL!);
+      localStorage.setItem('temperature', temperature.toString());
     } catch (err) {
       console.log(err);
     } finally {
@@ -343,6 +350,33 @@ const SettingsDialog = ({
                           </div>
                         </>
                       )}
+                      <div className="flex flex-col space-y-1">
+                        <p className="text-black/70 dark:text-white/70 text-sm">
+                          Temperature
+                        </p>
+                        <input
+                          type="number"
+                          step="0.1"
+                          min="0"
+                          max="1"
+                          placeholder="Temperature"
+                          value={temperature}
+                          onChange={(e) => {
+                            const value = parseFloat(e.target.value);
+                            if (!isNaN(value)) {
+                              setTemperature(value);
+                              setConfig({
+                                ...config!,
+                                temperature: value, // Update the config with the new temperature
+                              });
+                            }
+                          }}
+                          className={cn(
+                            'bg-light-secondary dark:bg-dark-secondary px-3 py-2 flex items-center overflow-hidden border border-light-200 dark:border-dark-200 dark:text-white rounded-lg text-sm',
+                            'w-full' // Ensure the input takes full width
+                          )}
+                        />
+                      </div>
                     {/* Embedding models */}
                     {config.embeddingModelProviders && (
                       <div className="flex flex-col space-y-1">
