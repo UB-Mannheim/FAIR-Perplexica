@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { BookOpenText, Home, Search, SquarePen, Settings, LibraryBig } from 'lucide-react';
+import { Search, Settings, LibraryBig, Info } from 'lucide-react';
 import Link from 'next/link';
 import { useSelectedLayoutSegments } from 'next/navigation';
 import React, { useState, type ReactNode } from 'react';
@@ -33,10 +33,22 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
     //   label: 'Discover',
     // },
     {
+      icon: Search,
+      href: '/', 
+      active: segments.length === 0 || segments.includes('c'),
+      label: 'Search',
+    },
+    {
       icon: LibraryBig,
       href: '/library',
       active: segments.includes('library'),
       label: 'Library',
+    },
+    {
+      icon: Info,
+      href: '/about',
+      active: segments.includes('about'),
+      label: 'About',
     }
   ];
 
@@ -45,9 +57,6 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
       <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-20 lg:flex-col">
         <div className="flex flex-col justify-between flex-grow items-center gap-y-5 overflow-y-auto bg-light-secondary dark:bg-dark-secondary px-2 py-8">
           <div className="flex flex-col items-center gap-y-5">
-            <a href="/">
-              <Search className="cursor-pointer" />
-            </a>
             <VerticalIconContainer>
               {navLinks.map((link, i) => (
                 <Link
@@ -70,10 +79,21 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
           </div>
           
           <div>
-            <Settings
+            <button
               onClick={() => setIsSettingsOpen(!isSettingsOpen)}
-              className="cursor-pointer"
-            />
+              className={cn(
+                'relative flex flex-row items-center justify-center cursor-pointer hover:bg-black/10 dark:hover:bg-white/10 duration-150 transition w-full py-2 rounded-lg',
+                isSettingsOpen
+                  ? 'text-black dark:text-white'
+                  : 'text-black/70 dark:text-white/70'
+              )}
+              aria-label="Settings"
+            >
+              <Settings />
+              {isSettingsOpen && (
+                <div className="absolute right-0 -mr-2 h-full w-1 rounded-l-lg bg-black dark:bg-white" />
+              )}
+            </button>
 
             <SettingsDialog
               isOpen={isSettingsOpen}
