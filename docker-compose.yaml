@@ -22,6 +22,7 @@ services:
     volumes:
       - backend-dbstore:/home/perplexica/data
       - ./config.toml:/home/perplexica/config.toml
+      - ./src:/home/perplexica/src
     extra_hosts:
       - 'host.docker.internal:host-gateway'
     networks:
@@ -39,6 +40,9 @@ services:
       - perplexica-backend
     ports:
       - 3000:3000
+    volumes:
+      - ./ui/components:/home/perplexica/components
+      - ./ui/app:/home/perplexica/app
     networks:
       - perplexica-network
     restart: unless-stopped

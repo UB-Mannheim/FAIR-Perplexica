@@ -17,4 +17,4 @@ RUN mkdir /home/perplexica/data
 RUN yarn install 
 RUN yarn build
 
-CMD ["yarn", "start"]
+CMD ["yarn", "dev"]
