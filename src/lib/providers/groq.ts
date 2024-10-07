@@ -9,6 +9,36 @@ export const loadGroqChatModels = async () => {
 
   try {
     const chatModels = {
+      'Llama 3.2 90B': new ChatOpenAI(
+        {
+          openAIApiKey: groqApiKey,
+          modelName: 'llama-3.2-90b-text-preview',
+          temperature: 0.3,
+        },
+        {
+          baseURL: 'https://api.groq.com/openai/v1',
+        },
+      ),
+      'Llama 3.2 1B': new ChatOpenAI(
+        {
+          openAIApiKey: groqApiKey,
+          modelName: 'llama-3.2-1b-preview',
+          temperature: 0.3,
+        },
+        {
+          baseURL: 'https://api.groq.com/openai/v1',
+        },
+      ),
+      'Llama 3.2 3B': new ChatOpenAI(
+        {
+          openAIApiKey: groqApiKey,
+          modelName: 'llama-3.2-3b-preview',
+          temperature: 0.3,
+        },
+        {
+          baseURL: 'https://api.groq.com/openai/v1',
+        },
+      ),
       'Llama 3.1 70B': new ChatOpenAI(
         {
           openAIApiKey: groqApiKey,
