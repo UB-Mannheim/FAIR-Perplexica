@@ -13,7 +13,7 @@ export const loadGroqChatModels = async () => {
         {
           openAIApiKey: groqApiKey,
           modelName: 'llama-3.2-90b-text-preview',
-          temperature: 0.3,
+          temperature: 0.7,
         },
         {
           baseURL: 'https://api.groq.com/openai/v1',
@@ -23,7 +23,7 @@ export const loadGroqChatModels = async () => {
         {
           openAIApiKey: groqApiKey,
           modelName: 'llama-3.2-1b-preview',
-          temperature: 0.3,
+          temperature: 0.7,
         },
         {
           baseURL: 'https://api.groq.com/openai/v1',
@@ -33,7 +33,7 @@ export const loadGroqChatModels = async () => {
         {
           openAIApiKey: groqApiKey,
           modelName: 'llama-3.2-3b-preview',
-          temperature: 0.3,
+          temperature: 0.7,
         },
         {
           baseURL: 'https://api.groq.com/openai/v1',
