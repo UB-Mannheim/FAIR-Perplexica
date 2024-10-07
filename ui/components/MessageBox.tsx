@@ -108,7 +108,7 @@ const MessageBox = ({
               <Markdown
                 className={cn(
                   'prose dark:prose-invert prose-p:leading-relaxed prose-pre:p-0',
-                  'max-w-none break-words text-black dark:text-white text-sm md:text-base font-medium',
+                  'max-w-none break-words text-black dark:text-white text-lg md:text-lg font-light',
                 )}
               >
                 {parsedMessage}
@@ -157,7 +157,7 @@ const MessageBox = ({
                       <div className="flex flex-col space-y-3">
                         {message.suggestions.map((suggestion, i) => (
                           <div
-                            className="flex flex-col space-y-3 text-sm"
+                            className="flex flex-col space-y-3 text-base"
                             key={i}
                           >
                             <div className="h-px w-full bg-light-secondary dark:bg-dark-secondary" />
@@ -165,7 +165,7 @@ const MessageBox = ({
                               onClick={() => {
                                 sendMessage(suggestion);
                               }}
-                              className="cursor-pointer flex flex-row justify-between font-medium space-x-2 items-center"
+                              className="cursor-pointer flex flex-row justify-between font-normal space-x-2 items-center"
                             >
                               <p className="transition duration-200 hover:text-[#24A0ED]">
                                 {suggestion}
