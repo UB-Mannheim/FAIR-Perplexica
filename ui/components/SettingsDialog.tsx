@@ -85,7 +85,7 @@ const SettingsDialog = ({
   const [selectedChatModel, setSelectedChatModel] = useState<string | null>(
     null,
   );
-  const [temperature, setTemperature] = useState<number>(0.7); // Default temperature
+  const [temperature, setTemperature] = useState<number>(0.7);
   const [selectedEmbeddingModelProvider, setSelectedEmbeddingModelProvider] =
     useState<string | null>(null);
   const [selectedEmbeddingModel, setSelectedEmbeddingModel] = useState<
