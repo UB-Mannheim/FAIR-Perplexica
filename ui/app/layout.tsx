@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Montserrat } from 'next/font/google';
+import { Montserrat, Roboto } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import Sidebar from '@/components/Sidebar';
@@ -7,6 +7,12 @@ import { Toaster } from 'sonner';
 import ThemeProvider from '@/components/theme/Provider';
 
 const montserrat = Montserrat({
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  fallback: ['Arial', 'sans-serif'],
+});
+const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
   subsets: ['latin'],
   display: 'swap',
@@ -26,7 +32,8 @@ export default function RootLayout({
 }>) {
   return (
     <html className="h-full" lang="en" suppressHydrationWarning>
-      <body className={cn('h-full', montserrat.className)}>
+      {/* <body className={cn('h-full', montserrat.className)}> */}
+      <body className={cn('h-full', roboto.className)}>
         <ThemeProvider>
           <Sidebar>{children}</Sidebar>
           <Toaster
