@@ -18,7 +18,7 @@ const AboutPage = () => {
         <main className="pt-20 lg:pt-28 px-4 lg:px-8">
           <div className="max-w-screen-lg mx-auto">
             <p className="text-black/70 dark:text-white/70 text-lg md:text-lg">
-              FAIR-Perplexica is an academic search engine designed to answer questions about <b>research data management (RDM)</b>.<br /><br />
+              FAIRplexica is an academic search engine designed to answer questions about <b>research data management (RDM)</b>.<br /><br />
               It is provided and maintained by <a href="https://www.bib.uni-mannheim.de/en/" target="_blank" rel="noopener noreferrer" className="text-black dark:text-white lg:text-lg font-medium truncate transition duration-200 hover:text-[#24A0ED] dark:hover:text-[#24A0ED] cursor-pointer">University Library Mannheim</a> and based on <a href="https://github.com/ItzCrazyKns/Perplexica" target='_blank' rel="noopener noreferrer" className="text-black dark:text-white lg:text-lg font-medium truncate transition duration-200 hover:text-[#24A0ED] dark:hover:text-[#24A0ED] cursor-pointer">Perplexica</a>.<br /><br />
             </p>
           </div>
